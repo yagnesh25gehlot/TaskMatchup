@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Send data to Google Sheets (replace the URL with your Google Apps Script URL)
-        fetch("https://script.google.com/macros/s/AKfycbyu5Yw9is9bWL1yu9mwK6OSiaVE3XkTCK0fSP6q6KLt1ngd_0d2adIK6QaD022PUVKS/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbwSOVC2ra2FErvLHDMIAIckYyshxIrJUkNigbmGxDbXFP-2tFQNVj5Fpg3uEOc7Agk/exec", {
             method: "POST",
             mode: "no-cors",
             body: JSON.stringify(data),
