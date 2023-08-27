@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const workForm = document.getElementById("workForm");
     const jobProvider = document.getElementById("jobProvider");
 
-    console.log("This is workform",workForm,providerForm);
+    console.log("This is workform",workForm,jobProvider);
 
     workForm.addEventListener("submit", function (e) {
         console.log("jobseeker Event is hit",workForm);
