@@ -85,7 +85,7 @@
             <p class="text-center mb-5 wow fadeInUp">Provide us the below details so that we can find perfect job for you.</p>
 
                     <div class="wow fadeInUp" data-wow-delay="0.5s">
-                        <form>
+                        <form id="jobForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -213,6 +213,76 @@
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+
+
+
+
+<!-- this saves the user data-->
+<script>
+    // Replace with your Google Sheets API key
+    const apiKey = 'AIzaSyBMf388ccyDYHq4G5TpvvkEoiQJyRavmAk';
+
+    // Replace with your Google Sheets spreadsheet ID
+    const spreadsheetId = '1TueTK--rXvfLKpnGVNGk5BonMqdpxLKXccgQACi3w4tgxz8lR5BUmtw0';
+
+    // Function to add data to Google Sheet
+    function addToGoogleSheet(data) {
+        gapi.client.init({
+            apiKey: apiKey,
+            discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+        }).then(function () {
+            return gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: spreadsheetId,
+                range: "TaskMatchup-JobSeeker", // Replace with your sheet name
+                valueInputOption: "RAW",
+                insertDataOption: "INSERT_ROWS",
+                values: [data],
+            });
+        }).then(function (response) {
+            console.log("Data added to Google Sheet:", response);
+        }, function (error) {
+            console.error("Error adding data to Google Sheet:", error);
+        });
+    }
+
+
+
+    // Function to handle form submission
+    // Function to handle form submission
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+        const skills = document.getElementById('skills').value;
+        const minSalary = document.getElementById('minSalary').value;
+        const maxSalary = document.getElementById('maxSalary').value;
+        const describe = document.getElementById('describe').value;
+
+        // Create an array with the form data
+        const formData = [name, email, phone, address, skills, minSalary, maxSalary, describe];
+
+        // Add data to Google Sheet
+        addToGoogleSheet(formData);
+    }
+
+    // Load the Google Sheets API
+    gapi.load("client", function () {
+        gapi.client.load("sheets", "v4").then(function () {
+            // Add a submit event listener to the form
+            const form = document.getElementById("jobForm"); // Use the form's id
+            form.addEventListener("submit", handleSubmit);
+        });
+    });
+</script>
+
+
+
+
+
 </body>
 
 </html>
