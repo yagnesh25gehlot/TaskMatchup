@@ -227,6 +227,7 @@
 
     // Function to add data to Google Sheet
     function addToGoogleSheet(data) {
+        console.lof("reached till api function");
         gapi.client.init({
             apiKey: apiKey,
             discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
@@ -251,7 +252,7 @@
     // Function to handle form submission
     function handleSubmit(event) {
         event.preventDefault();
-
+        console.log("reached till event handler")
         // Get form values
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
