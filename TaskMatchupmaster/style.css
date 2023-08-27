@@ -1,15 +1,23 @@
+
+
 body {
+    background-image: url('indians.jpg'); /* Replace with the correct path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed in the viewport */
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background for readability */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Add other CSS styles for your form and elements as needed */
+
 
 h1 {
     text-align: center;
