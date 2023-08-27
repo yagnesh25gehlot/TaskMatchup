@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const jobProvider = document.getElementById("jobProvider");
 
     jobProvider.addEventListener("submit", function (e) {
-
         console.log("job provider Event is hit",jobProvider);
-
 
         e.preventDefault();
         const formData = new FormData(jobProvider);
@@ -27,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => {
                 if (response.ok) {
-                    alert("Form submitted successfully!");
-                    jobProvider.reset();
+                    alert("Form submitted successfully! try anything else");
+                    // jobProvider.reset();
                 } else {
                     alert("Form submission failed.");
                 }

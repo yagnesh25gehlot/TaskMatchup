@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const workForm = document.getElementById("workForm");
 
