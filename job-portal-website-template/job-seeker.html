@@ -89,50 +89,50 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="phone" placeholder="Your whatsapp number">
+                                        <input type="number" class="form-control" id="phone" name="phone" placeholder="Your whatsapp number">
                                         <label for="phone">Your whatsapp number</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="address" placeholder="Your Address">
+                                        <input type="text" class="form-control" id="address" name="address" placeholder="Your Address">
                                         <label for="address">Your Address</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="skills" placeholder="Your Skills">
+                                        <input type="text" class="form-control" id="skills" name="skills" placeholder="Your Skills">
                                         <label for="skills">Your Skills</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="minSalary" placeholder="Minimum Salary" min="0">
+                                        <input type="number" class="form-control" id="minSalary" name="minSalary" placeholder="Minimum Salary" min="0">
                                         <label for="minSalary">Minimum Salary</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="maxSalary" placeholder="Maximum Salary" min="0">
+                                        <input type="number" class="form-control" id="maxSalary" name="maxSalary" placeholder="Maximum Salary" min="0">
                                         <label for="maxSalary">Maximum Salary</label>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Describe What You Can Do!" id="describe" style="height: 150px"></textarea>
+                                        <textarea class="form-control" placeholder="Describe What You Can Do!" id="describe" name="describe" style="height: 150px"></textarea>
                                         <label for="describe">Describe What You Can Do!</label>
                                     </div>
                                 </div>
@@ -223,8 +223,9 @@
     document.addEventListener("DOMContentLoaded", function () {
         console.log("event listner hit")
         const workForm = document.getElementById("workForm");
-        const doWorkSection = document.getElementById("doWorkSection");
-        const assignWorkSection = document.getElementById("assignWorkSection");
+
+
+        console.log("This is workform",workForm);
 
         workForm.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -233,6 +234,8 @@
             formData.forEach((value, key) => {
                 data[key] = value;
             });
+
+            console.log("This is data",data);
 
 
             // Send data to Google Sheets (replace the URL with your Google Apps Script URL)
