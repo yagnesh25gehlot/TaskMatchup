@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => {
                 if (response.ok) {
                     alert("Form submitted successfully! try anything else");
-                    // jobProvider.reset();
+                    jobProvider.reset();
                 } else {
                     alert("Form submission failed.");
                 }
