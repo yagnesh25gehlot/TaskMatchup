@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         })
             .then((response) => {
+                console.log("this is response",response);
                 if (response.ok) {
                     alert("Your request submitted successfully.");
                     jobProvider.reset();
