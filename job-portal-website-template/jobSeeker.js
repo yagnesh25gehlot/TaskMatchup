@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         })
             .then((response) => {
-                if (response.ok) {
+                // if (response.ok) {
                     alert("Form submitted successfully!");
                     workForm.reset();
-                } else {
-                    alert("Form submission failed.");
-                }
+                // } else {
+                //     alert("Form submission failed.");
+                // }
             })
             .catch((error) => {
                 alert("An error occurred: " + error.message);

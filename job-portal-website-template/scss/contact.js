@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         // Send data to Google Sheets (replace the URL with your Google Apps Script URL)
-        fetch("https://script.google.com/macros/s/AKfycby0tPgLw1A1ciV8HttTE7ibiqBAczfC1wmJdaM_ETru8RFiu7_v0_-qI7dsAMEpGJh4/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbwxFQQycNDVSuHMEBz9h7BrV7be292TbztajjQM_H6IYkLlnaDuSh9qtf1sjDfUCg9z/exec", {
             method: "POST",
             mode: "no-cors",
             body: JSON.stringify(data),
@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         })
             .then((response) => {
-                if (response.ok) {
+                // if (response.ok) {
                     alert("Form submitted successfully!");
                     contactForm.reset();
-                } else {
-                    alert("Form submission failed.");
-                }
+                // } else {
+                //     alert("Form submission failed.");
+                // }
             })
             .catch((error) => {
                 alert("An error occurred: " + error.message);

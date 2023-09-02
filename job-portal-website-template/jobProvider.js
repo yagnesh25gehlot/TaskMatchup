@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => {
                 console.log("this is response",response);
-                if (response.ok) {
+                // if (response.ok) {
                     alert("Your request submitted successfully.");
                     jobProvider.reset();
-                } else {
-                    alert("Form submission failed.");
-                }
+                // } else {
+                //     alert("Form submission failed.");
+                // }
             })
             .catch((error) => {
                 alert("An error occurred: " + error.message);
