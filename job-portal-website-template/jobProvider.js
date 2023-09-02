@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("This is job provider data",data);
 
         // Send data to Google Sheets (replace the URL with your Google Apps Script URL)
-        fetch("https://script.google.com/macros/s/AKfycbxus3Ltohzc2fOO7sC27GIXyh9oKjcPExdXVx9m29WSIfYTI3T1qcKR1EcIdvlWByl-Rw/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbx-BRBZdwZkPEpShhePmePnDrbtNTyrEh4h7rmqTmFDJDCDzoTaQlL6DtWh2ZA6FzOykw/exec", {
             method: "POST",
             mode: "no-cors",
             body: JSON.stringify(data),
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => {
                 if (response.ok) {
-                    alert("Form submitted successfully! try anything else");
+                    alert("Your request submitted successfully.");
                     jobProvider.reset();
                 } else {
                     alert("Form submission failed.");
