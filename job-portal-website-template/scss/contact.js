@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         })
             .then((response) => {
+                console.log("this is the response",response)
                 // if (response.ok) {
                     alert("Form submitted successfully!");
                     contactForm.reset();
